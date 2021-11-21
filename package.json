@@ -19,7 +19,6 @@
     "react-session-api": "^1.1.0",
     "web-vitals": "^1.1.2"
   },
-  "proxy": "http://localhost:5000",
   "scripts": {
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -27,7 +26,7 @@
     "client": "react-scripts start",
     "server": "npm start --prefix server",
     "clientinstall": "npm install --prefix client",
-    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "concurrently \"npm run client\" \"npm run server\"",
     "heroku-postbuild": "cd server && npm install"
   },
   "eslintConfig": {
