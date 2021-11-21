@@ -1,0 +1,7 @@
+.logout {
+  transition: box-shadow 300ms ease !important;
+}
+.logout:hover {
+  background-color: white !important;
+  box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.2) !important;
+}
