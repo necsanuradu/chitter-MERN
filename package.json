@@ -25,7 +25,6 @@
     "eject": "react-scripts eject",
     "client": "react-scripts start",
     "server": "npm start --prefix server",
-    "clientinstall": "npm install --prefix client",
     "start": "concurrently \"npm run client\" \"npm run server\"",
     "heroku-postbuild": "cd server && npm install"
   },
