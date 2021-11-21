@@ -25,7 +25,7 @@
     "eject": "react-scripts eject",
     "client": "react-scripts start",
     "server": "npm start --prefix server",
-    "start": "concurrently \"npm run client\" \"npm run server\"",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "cd server && npm install"
   },
   "eslintConfig": {
