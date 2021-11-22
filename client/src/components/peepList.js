@@ -69,7 +69,7 @@ export default class PeepList extends Component {
 
   getPeeps() {
     axios
-      .get("https://chitter-mern.herokuapp.com/peep/")
+      .get("http://chitter-mern.herokuapp.com/peep/")
       .then((response) => {
         this.setState({ peeps: response.data.reverse() });
       })
@@ -80,7 +80,7 @@ export default class PeepList extends Component {
 
   // This method will delete a peep based on the method
   deletePeep(id) {
-    axios.delete("https://chitter-mern.herokuapp.com/" + id).then((response) => {
+    axios.delete("http://chitter-mern.herokuapp.com/" + id).then((response) => {
       console.log(response.data);
     });
 

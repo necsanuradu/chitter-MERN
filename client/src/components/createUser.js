@@ -41,7 +41,7 @@ export default class CreateUser extends Component {
       user_password: this.state.user_password,
     };
 
-    axios.post("https://chitter-mern.herokuapp.com/user/add", newuser).then((res) => {
+    axios.post("http://chitter-mern.herokuapp.com/user/add", newuser).then((res) => {
       if (Object.keys(res.data).length === 0) {
         this.setState({
           userCreateteSolution: "Username already exists",
