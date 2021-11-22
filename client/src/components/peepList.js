@@ -69,7 +69,7 @@ export default class PeepList extends Component {
 
   getPeeps() {
     axios
-      .get("http://localhost:5000/peep/")
+      .get("https://localhost:5000/peep/")
       .then((response) => {
         this.setState({ peeps: response.data.reverse() });
       })
@@ -80,7 +80,7 @@ export default class PeepList extends Component {
 
   // This method will delete a peep based on the method
   deletePeep(id) {
-    axios.delete("http://localhost:5000/" + id).then((response) => {
+    axios.delete("https://localhost:5000/" + id).then((response) => {
       console.log(response.data);
     });
 

@@ -24,7 +24,7 @@ class EditPeep extends Component {
   // This will get the peep based on the id from the database.
   componentDidMount() {
     axios
-      .get("http://localhost:5000/peep/" + this.props.match.params.id)
+      .get("https://localhost:5000/peep/" + this.props.match.params.id)
       .then((response) => {
         this.setState({
           user_name: response.data.user_name,
@@ -69,7 +69,7 @@ class EditPeep extends Component {
     // This will send a post request to update the data in the database.
     axios
       .post(
-        "http://localhost:5000/update/" + this.props.match.params.id,
+        "https://localhost:5000/update/" + this.props.match.params.id,
         newEditedpeep
       )
       .then((res) => console.log(res.data));

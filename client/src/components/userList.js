@@ -32,7 +32,7 @@ export default class userList extends Component {
   // This method will get the data from the database.
   componentDidMount() {
     axios
-      .get("http://localhost:5000/users")
+      .get("https://localhost:5000/users")
       .then((response) => {
         this.setState({ users: response.data });
         // console.log(this.state.users);
@@ -44,7 +44,7 @@ export default class userList extends Component {
 
   // This method will delete a user based on the method
   deleteUser(id) {
-    axios.delete("http://localhost:5000/" + id).then((response) => {
+    axios.delete("https://localhost:5000/" + id).then((response) => {
       console.log(response.data);
     });
 
