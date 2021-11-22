@@ -56,7 +56,7 @@ export default class userLogin extends Component {
       user_password: this.state.user_password,
     };
 
-    axios.post("https://localhost:5000/user/signin", userLogin).then((res) => {
+    axios.post("http://localhost:5000/user/signin", userLogin).then((res) => {
       if (
         typeof res.data === "object" &&
         res.data !== null &&
