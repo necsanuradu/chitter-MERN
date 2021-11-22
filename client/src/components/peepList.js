@@ -69,7 +69,7 @@ export default class PeepList extends Component {
 
   getPeeps() {
     axios
-      .get("/peep/")
+      .get("http://localhost:5000/peep/")
       .then((response) => {
         this.setState({ peeps: response.data.reverse() });
       })
