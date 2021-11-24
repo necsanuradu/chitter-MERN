@@ -15,9 +15,11 @@ module.exports = {
       {
         _db = db.db("myFirstDatabase");
         console.log("Successfully connected to MongoDB."); 
+      }else{
+        console.log("Unsuccessful connetction to MongoDB");
       }
       return callback(err);
-         });
+    });
   },
  
   getDb: function () {
