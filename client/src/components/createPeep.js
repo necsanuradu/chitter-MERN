@@ -54,7 +54,7 @@ export default class CreatePeep extends Component {
       peep_time: parseInt(new Date().getTime() / 1000),
     };
 
-    axios.post("http://localhost:5000/peep/add", newperson).then((res) => {
+    axios.post("https://chitter-mern.herokuapp.com/peep/add", newperson).then((res) => {
       Session.set("peepsReload", parseInt(new Date().getTime() / 100));
       // console.log(res.data);
     });
