@@ -15,11 +15,11 @@ const ObjectId = require("mongodb").ObjectId;
 const crypto = require("crypto");
 
 // This section will help you get a list of all the peeps.
-peepRoutes.route("/peep").get(async function (req, res) {
+peepRoutes.route("/peep").get(async function (req, res, next) {
   //let db_connect = dbo.getDb("employees");
   try {
     //listing messages in users mailbox
-    await dbo
+    let peepsList = await dbo
       .getDb("employees")
       .collection("peeps")
       .find({})
@@ -27,6 +27,7 @@ peepRoutes.route("/peep").get(async function (req, res) {
         if (err) throw err;
         res.json(result);
       });
+      res.send(peepsList);
   } catch (err) {
       next(err);
   }
