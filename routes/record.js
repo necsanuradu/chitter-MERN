@@ -18,14 +18,13 @@ const crypto = require("crypto");
 peepRoutes.route("/peep").get(async function (req, res, next) {
   try {
     let db_connect = await dbo.getDb("employees");
-    let peepsList = await db_connect
+    db_connect
       .collection("peeps")
       .find({})
       .toArray(function (err, result) {
         if (err) throw err;
         res.json(result);
       });
-      res.send(peepsList);
   } catch (err) {
       next(err);
   }
