@@ -69,7 +69,7 @@ export default class PeepList extends Component {
 
   getPeeps() {
     axios
-      .get("http://localhost:5000/peep/")
+      .get("https://chitter-mern.herokuapp.com:5000/peep/")
       .then((response) => {
         this.setState({ peeps: response.data.reverse() });
       })
