@@ -5,3 +5,7 @@
   background-color: white !important;
   box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.2) !important;
 }
+.register {
+  text-decoration: underline !important;
+  text-decoration-color:#6c757d !important;
+}

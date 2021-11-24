@@ -117,8 +117,8 @@ export default class userLogin extends Component {
               <input
                 type="button"
                 value="Register"
-                className="btn-secondary form-control"
-                style={{ textDecoration: "underline #6c757d" }}
+                className="btn-secondary form-control register"
+                
               />
             </NavLink>
           </form>
