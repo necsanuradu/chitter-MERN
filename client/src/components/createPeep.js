@@ -72,20 +72,21 @@ export default class CreatePeep extends Component {
     return (
       this.state.user_loggedIn === "true" && (
         <div>
-          <form onSubmit={this.onSubmit} className="row">
-            <div className="form-group col-12 col-md-11">
+          <form onSubmit={this.onSubmit} className="row position-relative">
+            <div className="form-group col-12">
               <textarea
                 type="text"
-                className="form-control"
+                className="form-control pe-lg-5"
                 value={this.state.peep_content}
                 onChange={this.onChangePeepContent}
                 placeholder="What's on your mind.."
                 rows="2"
                 style={{ resize: "none" }}
                 required
+                maxLength="125"
               />
             </div>
-            <div className="col-12 col-md-auto form-group d-inline-block mt-2 mb-0 float-end">
+            <div className="col-12 col-lg-auto form-group d-inline-block mt-1 py-2 mb-0 me-2 position-lg-absolute  end-0">
               <input
                 type="submit"
                 value="Peep"
