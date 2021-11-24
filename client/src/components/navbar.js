@@ -42,7 +42,7 @@ export default class Navbar extends Component {
   render() {
     return (
       <div className="row" data-logstate={this.state.user_loggedIn}>
-        <nav className="navbar navbar-expand-lg navbar-light">
+        <nav className="navbar navbar-expand-lg navbar-light mt-1">
           <NavLink className="navbar-brand" to="/">
             <i className="ms-2 h5">
               <div className="text-muted d-inline h5">C</div>
