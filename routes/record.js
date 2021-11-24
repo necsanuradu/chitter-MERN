@@ -16,8 +16,8 @@ const crypto = require("crypto");
 
 // This section will help you get a list of all the peeps.
 peepRoutes.route("/peep").get(async function (req, res) {
-  let db_connect = dbo.getDb("employees");
-  await db_connect
+  //let db_connect = dbo.getDb("employees");
+  await dbo.getDb("employees")
     .collection("peeps")
     .find({})
     .toArray(function (err, result) {
