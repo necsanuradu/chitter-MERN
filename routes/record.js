@@ -15,7 +15,7 @@ const ObjectId = require("mongodb").ObjectId;
 const crypto = require("crypto");
 
 // This section will help you get a list of all the peeps.
-peepRoutes.route("/peep").get(function (req, res) {
+peepRoutes.route("/peep").get(async function (req, res) {
   let db_connect = dbo.getDb("employees");
   db_connect
     .collection("peeps")
@@ -27,7 +27,7 @@ peepRoutes.route("/peep").get(function (req, res) {
 });
 
 // This section will help you get a single peep by id
-peepRoutes.route("/peep/:id").get(function (req, res) {
+peepRoutes.route("/peep/:id").get(async function (req, res) {
   let db_connect = dbo.getDb();
   let myquery = { _id: ObjectId(req.params.id) };
   db_connect.collection("peeps").findOne(myquery, function (err, result) {
@@ -37,7 +37,7 @@ peepRoutes.route("/peep/:id").get(function (req, res) {
 });
 
 // This section will help you create a new peep.
-peepRoutes.route("/peep/add").post(function (req, response) {
+peepRoutes.route("/peep/add").post(async function (req, response) {
   let db_connect = dbo.getDb();
   let myobj = {
     user_name: req.body.user_name,
@@ -51,7 +51,7 @@ peepRoutes.route("/peep/add").post(function (req, response) {
 });
 
 // This section will help you update a peep y id.
-peepRoutes.route("/update/:id").post(function (req, response) {
+peepRoutes.route("/update/:id").post(async function (req, response) {
   let db_connect = dbo.getDb();
   let myquery = { _id: ObjectId(req.params.id) };
   let newvalues = {
@@ -82,7 +82,7 @@ peepRoutes.route("/:id").delete((req, response) => {
 });
 
 // This section will help you create a new user.
-peepRoutes.route("/user/xadd").post(function (req, response) {
+peepRoutes.route("/user/xadd").post(async function (req, response) {
   let db_connect = dbo.getDb();
   let user_name = crypto
     .createHash("sha1")
@@ -103,7 +103,7 @@ peepRoutes.route("/user/xadd").post(function (req, response) {
 });
 
 // This section will help you create a new user.
-peepRoutes.route("/user/add").post(function (req, res) {
+peepRoutes.route("/user/add").post(async function (req, res) {
   let db_connect = dbo.getDb();
   let user_name = crypto
     .createHash("sha1")
@@ -138,7 +138,7 @@ peepRoutes.route("/user/add").post(function (req, res) {
 });
 
 // This section will help you get a single user by user_name and user_password and check if logged in
-peepRoutes.route("/user/signin").post(function (req, res) {
+peepRoutes.route("/user/signin").post(async function (req, res) {
   let db_connect = dbo.getDb();
   let user_name = crypto
     .createHash("sha1")
@@ -159,7 +159,7 @@ peepRoutes.route("/user/signin").post(function (req, res) {
 });
 
 //get all the users
-peepRoutes.route("/users").get(function (req, res) {
+peepRoutes.route("/users").get(async function (req, res) {
   let db_connect = dbo.getDb();
   db_connect
     .collection("users")
