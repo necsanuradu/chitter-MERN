@@ -10,6 +10,16 @@
   text-decoration-color:#6c757d !important;
 }
 
+.sticky-container{
+  position: sticky;
+    top: -4.3rem;
+    z-index: 999;
+}
+.form-shadow{
+  box-shadow:0 0 0.2rem 0.2rem rgba(255, 255, 255 , 0.9);
+  background-color: rgba(255, 255, 255 , 0.9);
+}
+
 @media (min-width: 576px) {
   .position-sm-static {
     position: static !important;
@@ -62,6 +72,11 @@
   .position-lg-sticky {
     position: sticky !important;
   }
+  .sticky-container{
+    position: sticky;
+      top: 0rem;
+      z-index: 999;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -81,3 +96,5 @@
     position: sticky !important;
   }
 }
+
+

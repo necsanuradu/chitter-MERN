@@ -2,6 +2,7 @@ import React, { Component } from "react";
 // This will require to npm install axios
 import axios from "axios";
 import Session from "react-session-api";
+import { scroolIntoView } from "./helper";
 
 export default class CreatePeep extends Component {
   // This is the constructor that stores the data.
@@ -54,10 +55,12 @@ export default class CreatePeep extends Component {
       peep_time: parseInt(new Date().getTime() / 1000),
     };
 
-    axios.post("https://chitter-mern.herokuapp.com/peep/add", newperson).then((res) => {
-      Session.set("peepsReload", parseInt(new Date().getTime() / 100));
-      // console.log(res.data);
-    });
+    axios
+      .post("https://chitter-mern.herokuapp.com/peep/add", newperson)
+      .then((res) => {
+        Session.set("peepsReload", parseInt(new Date().getTime() / 100));
+        // console.log(res.data);
+      });
 
     // We will empty the state after posting the data to the database
     this.setState({
@@ -71,8 +74,11 @@ export default class CreatePeep extends Component {
   render() {
     return (
       this.state.user_loggedIn === "true" && (
-        <div>
-          <form onSubmit={this.onSubmit} className="row position-relative">
+        <div className="sticky-container pt-1 mt-1">
+          <form
+            onSubmit={this.onSubmit}
+            className="row position-relative form-shadow"
+          >
             <div className="form-group col-12">
               <textarea
                 type="text"
@@ -86,7 +92,10 @@ export default class CreatePeep extends Component {
                 maxLength="125"
               />
             </div>
-            <div className="col-12 col-lg-auto form-group d-inline-block mt-1 py-2 mb-0 me-2 position-lg-absolute  end-0">
+            <div
+              className="col-12 col-lg-auto form-group d-inline-block mt-1 py-2 mb-0 me-2 position-lg-absolute  end-0" 
+              onClick={scroolIntoView}
+            >
               <input
                 type="submit"
                 value="Peep"

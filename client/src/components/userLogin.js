@@ -81,7 +81,7 @@ export default class userLogin extends Component {
   render() {
     return (
       this.state.user_loggedIn !== "true" && (
-        <div className="col-12 col-md-6 m-0 p-0">
+        <div className="col-12 col-md-7 col-lg-6 m-0 p-0">
           <form onSubmit={this.onSubmit} className="container m-0 p-0 text-end">
             <div className="col-12 col-md-3 mt-1 mt-md-0 form-group d-inline-block me-md-1">
               <input
