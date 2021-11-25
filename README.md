@@ -1,6 +1,6 @@
 # Chitter-MERN
 ### Live at
-https://chitter-mern.herokuapp.com/register
+https://chitter-mern.herokuapp.com
 
 ### Single page web app.
 mobile first
