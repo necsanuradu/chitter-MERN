@@ -51,7 +51,7 @@ export default class CreatePeep extends Component {
     // When post request is sent to the create url, axios will add a new peep(newperson) to the database.
     const newperson = {
       user_name: Session.get("userName"),
-      peep_content: this.state.peep_content,
+      peep_content: this.state.peep_content.toString().substr(0, 125),
       peep_time: parseInt(new Date().getTime() / 1000),
     };
 
